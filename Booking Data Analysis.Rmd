@@ -1,0 +1,42 @@
+---
+title: "Booking Data Visualization"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Report Analysis of fitting phase-type distributions to an example data set.
+
+## Data set
+
+Booking data example with some variables
+
+```{r Import, echo=FALSE}
+BookingData<-read.csv("C:/Users/nwuser/Downloads/BookingData.csv", sep=";")
+```
+
+```{r view}
+head(BookingData)
+```
+It contains observations for different flights from Berlin
+
+```{r O-D1, echo=TRUE}
+unique(BookingData[['ORIGIN']])
+```
+to `r length(unique(BookingData[['DEST']]))` destinations
+
+```{r O-D2, echo=TRUE}
+unique(BookingData[['DEST']], fromLast = TRUE)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
